@@ -12,10 +12,10 @@
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>3.26.4</quarkus.platform.version>
         <surefire-plugin.version>3.5.3</surefire-plugin.version>
-        <compiler-plugin.version>3.14.0</compiler-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.release>21</maven.compiler.release>
+        <maven.compiler.parameters>true</maven.compiler.parameters>
         <skipITs>true</skipITs>
     </properties>
 
@@ -60,15 +60,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${compiler-plugin.version}</version>
-                <configuration>
-                    <!-- the parameters=true option is critical so that RESTEasy works fine -->
-                    <parameters>true</parameters>
-                </configuration>
-            </plugin>
             <plugin>
                 <!-- you need this specific version to integrate with the other build helpers -->
                 <artifactId>maven-surefire-plugin</artifactId>
